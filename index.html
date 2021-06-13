@@ -1,0 +1,68 @@
+<html>
+<head><title>Colour Tiles</title>
+<link rel="stylesheet" href="Colour Tiles.css">
+<script type="text/javascript" src="Colour Tiles.js"></script>
+</head>
+<body onload="startup()">
+<table width="100%" height="100%" id="tblscreen">
+	<tr height="20%"> 
+                <td colspan="2" class="myhdr1"><img src="usericon.png" style="width:64px;height:64px;">Name <input type="text" id="username" placeholder="Type your name here..."></td>
+                <td widht="10%" class="mygame"><img src="Game.png" style="width:128px;height:128px;"></td>
+                <td width="30%" class="mygame">COLOR TILES</td>
+                <td colspan="2" width="40%" class="mygame">
+			<table width="100%" id="tblres">
+			   <td colspan="5" class="resheader"><img src="topper.png" style="width:32px;height:32px;">&nbsp;&nbsp;TOP SCORERS</td></tr>
+			   <tr><td>Mode</td><td>Name</td><td>Moves</td><td>Duration</td><td>Score</td></tr>
+			   <tr class="reslines"><td class="reslinesh">Easy</td><td id="etpname"></td><td id="etpmove"></td><td id="etptime"></td><td id="etpscore"></td></tr>
+			   <tr class="reslines"><td class="reslinesh">Medium</td><td id="mtpname"></td><td id="mtpmove"></td><td id="mtptime"></td><td id="mtpscore"></td></tr>
+			   <tr class="reslines"><td class="reslinesh">Hard</td><td id="htpname"></td><td id="htpmove"></td><td id="htptime"></td><td id="htpscore"></td></tr>
+                        </table>
+                </td>
+    		
+	</tr>
+	<tr height="7%">
+                <td colspan="2" class="myhdr2">Game difficulty level</td>
+                <td colspan="2" class="myhdrlight">Move count : &nbsp;&nbsp;<input type="button" class="btnscore" id="moves" value="0"> </td>
+	        <td colspan="2" class="myhdrlight">Duration: &nbsp;&nbsp;<input class="btnscore" type="button" id="timetaken" value="00:00"></td>   
+	</tr>
+	<tr height="16%">
+                <td width="10%"  class="stylemode">
+		    <input type="radio" id="m1" name="gmode" onclick="setmode(this.value);" value="easy" checked style="cursor:hand;"><label for="m1" style="cursor:hand;">EASY</label> 
+                </td>
+                <td width="10%"  class="stylemode"> 
+                   <lable> 3x3 tiles</label>
+                </td>
+           	<td colspan="2" rowspan="4" id="tdgpreview" style="background-color:rgba(200,200,50,0.3);">
+                    <table id="tblpreview" align="center"></table> 
+                </td>
+                <td colspan="2" rowspan="4" id="tdgame" style="background-color:rgba(200,200,50,0.3);">
+		   <table id="tblgame" align="center"></table>
+                </td> 
+
+        </tr height="16%">
+        <tr>  
+		<td  class="stylemode">
+                    <input type="radio" id="m2" name="gmode" style="cursor:hand;" onclick="setmode(this.value);" value="medium"><label for="m2" style="cursor:hand;">MEDIUM</label>
+		</td>
+                <td  class="stylemode" onclick="alert(this.height)"> 
+                   <lable>4x4 tiles</label>
+                </td>
+        </tr>  
+	<tr height="16%">
+		<td class="stylemode">
+                    <input type="radio" id="m3" name="gmode" style="cursor:hand;" onclick="setmode(this.value);" value="hard"><label for="m3" style="cursor:hand;">HARD</label>
+                </td>
+		<td class="stylemode">
+                   <label> 5x5 tiles</label>
+                </td>
+	</tr>
+        <tr height="10%">
+            <td colspan="2" class="myhdr2"><input type="button" class="btn" value="Shuffle Tiles" id="btnshuffle" onclick="drawtiles()"></td>   
+        </tr>
+        <tr height="10%">
+            <td colspan="6" class="myhdr1" style="text-align:center;"><input type="button"  class="btn" value="Start Game" id="btnstart" onclick="start();"></td>   
+        </tr>
+</table>
+
+
+</body>
