@@ -6,3 +6,4 @@ Done by,
 Bhuvanitha Priyadharshini k
 107120029
 EEE-A
+This project's githubpage link - https://bhuvanitha.github.io/colourtiles/
