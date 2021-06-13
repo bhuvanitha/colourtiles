@@ -1,3 +1,4 @@
+This project's githubpage link - https://bhuvanitha.github.io/colourtiles/
 # colourtiles
 for college project.
 Task 1 of web development role for delta force club inductions.
@@ -6,4 +7,3 @@ Done by,
 Bhuvanitha Priyadharshini k
 107120029
 EEE-A
-This project's githubpage link - https://bhuvanitha.github.io/colourtiles/
