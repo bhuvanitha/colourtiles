@@ -323,18 +323,21 @@ function comparepattern()
     }
  if(issame==1)
   {
-   controlInterface(1);
    clearInterval(clock);
    sound_bgm.pause(); 
    var sound_win=new Audio('wingame.wav');  
    sound_win.play();
+   document.getElementById("btnstart").disabled=true;
+   allowplay=0;
    var btn=document.getElementById("btnstart");
    btn.value="Start Game";
+   var m=document.getElementById("popmsg");
+   m.innerHTML="congrats you won the game";
    savescore();
    document.getElementById("timetaken").value="00:00";
    showresult();
-   alert("Congrats you won the game");
-   drawtiles();
+   var p=document.getElementById("popup");
+   p.style.visibility="visible";
   }
 }
 
@@ -352,6 +355,8 @@ function savescore()
  tt=tm+ts;
  var move=document.getElementById("moves").value;
  var score=Math.round((1/Math.sqrt(tt)+2/(move^2))*1000);
+ var m=document.getElementById("popmsg");
+   
  switch(crntmode)
  {
    case "easy":
@@ -361,6 +366,7 @@ function savescore()
   			localStorage.setItem("ehsmove",move);
   			localStorage.setItem("ehstime",t);
   			localStorage.setItem("ehsscore",score);
+                        m.innerHTML="congrats you are a topscorer";
  		}
 		break;
    case "medium":
@@ -370,6 +376,7 @@ function savescore()
   			localStorage.setItem("mhsmove",move);
   			localStorage.setItem("mhstime",t);
   			localStorage.setItem("mhsscore",score);
+ 			m.innerHTML="congrats you are a topscorer";
  		}
 		break;
    case "hard":
@@ -379,6 +386,7 @@ function savescore()
   			localStorage.setItem("hhsmove",move);
   			localStorage.setItem("hhstime",t);
   			localStorage.setItem("hhsscore",score);
+			m.innerHTML="congrats you are a topscorer";
  		}
 		break;
  }
@@ -407,4 +415,15 @@ function showresult()
  document.getElementById("htpscore").innerHTML=localStorage.getItem("hhsscore");
   
 }
+
+function hidediv()
+{
+   var z=document.getElementById("popup");
+   z.style.visibility="hidden";
+   drawtiles();
+   controlInterface(1);
+   document.getElementById("btnstart").disabled=false;
+   allowplay=1;  
+}
+
  
