@@ -4,6 +4,12 @@
 <script type="text/javascript" src="Colour Tiles.js"></script>
 </head>
 <body onload="startup()">
+<div class="popresult" id="popup">
+      <table width="100%">
+	<tr><td align="center"><label id="popmsg"></label></td></tr>
+	<tr><td align="center"><input type="button" id="pbtn" value="OK" onclick="hidediv();"></td></tr>
+      </table>
+</div>
 <table width="100%" height="100%" id="tblscreen">
 	<tr height="20%"> 
                 <td colspan="2" class="myhdr1"><img src="usericon.png" style="width:64px;height:64px;">Name <input type="text" id="username" placeholder="Type your name here..."></td>
